@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moody Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo"></div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Creanate</a></li>
+                <li><a href="#">Charity</a></li>
+                <li><a href="#">Connect</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        <button class="cta" ><a href="#contact-form">Contact</a></button>
+        </nav>
+        <div class="hero">
+            <h1>Welcome to our website</h1>
+            <p>This website was created for you to enjoy and have fun with the content we have to offer. Whether <br> you are looking for entertainment, knowledge, or sharing experiences, we hope you find something <br> you like here. Thank you for visiting and we hope you enjoy using our website</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Creators">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills and Services Section -->
+    <section class="skills-services">
+        <div class="skills-left">
+            <img src="me.jpg" alt="">
+            <div class="skill">
+                <h2>About me</h2>
+                <p><strong> Hello</strong><br> My name is Chinnakrit Putthom<br>I am 19 years old.<br><br>I am a creative and fun person. I enjoy developing projects with HTML, CSS and JavaScript, with a passion for learning and innovation</p>
+            </div>
+        </div>
+        <div class="skills-right">
+            <div class="skill">
+                <h2>Skill me</h2>
+                <p>HTML, CSS, and JavaScript</p>
+            </div>
+            <div class="skill">
+                <h2>Project details</h2>
+                <p><strong>Layout </strong> The web page has a clean and responsive design using HTML and CSS to create the structure and layout of the page.<br><strong>Functionality</strong> Use Express.js to efficiently handle form requests and submissions.<br><strong>Data Management</strong> Manage data sent from forms and display results quickly and accurately.<br><strong>User Experience</strong> Focus on user-friendly and responsive design to enhance user experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Section -->
+    <section class="creanate">
+        <div class="label">
+            <h1>My friends</h1>
+        </div>
+        <div class="profile-box">
+            <div class="profile">
+                <img src="hero1.png" alt="Profile Picture">
+                <div class="massage">
+                    <h3>Ploy Sai</h3>
+                    <p><strong> Frontend Developer</strong><br>HTML/CSS: Creating and styling web pages<br>JavaScript: Writing code to add functionality and interactivity to web pages.<br>Frameworks/Libraries: React, Angular, Vue.js<br>Responsive Design: Design websites that adapt to different screen sizes.<br>Version Control: Git/GitHub</p>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="hero2.png" alt="Profile Picture">
+                <div class="massage">
+                    <h3>Somsak</h3>
+                    <p><strong>Backend Developer</strong><br>Programming Languages: Node.js, Python, Java, PHP, Ruby, C#<br>Frameworks: Express.js (Node.js), Django (Python), Spring (Java), Laravel (PHP)<br>Database Management: SQL, NoSQL (MongoDB, PostgreSQL, MySQL)<br>APIs: Developing RESTful APIs or GraphQL<br>Authentication/Authorization: OAuth, JWT</p>
+                </div>
+            </div>
+        </div>
+        <form action="/todos" id="contact-form" method="post">
+            <h1>Contact me</h1>
+            <div class="services">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+    
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+    
+                <label for="number">Number</label>
+                <input type="tel" name="number" id="number"></label>
+    
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Moody. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contact-form');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // ป้องกันการส่งฟอร์มแบบปกติ
+    
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                number: formData.get('number'),
+                message: formData.get('message')
+            };
+    
+            fetch('/todos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Your message has been sent!');
+                form.reset(); // ล้างข้อมูลฟอร์ม
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    });
+    </script>
+    

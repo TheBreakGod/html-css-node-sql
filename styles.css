@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #969696;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background: url('heroBackground.png') no-repeat center center/cover;
+    height: 80vh;
+    color: #fff;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+nav .logo {
+    width: 200px;
+    height: 50px;
+    background-image: url('logo.png');
+    background-size: cover ; /* ใช้ cover ถ้าต้องการให้โลโก้เต็มพื้นที่ */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav .cta {
+    background-color: #ffd700;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero {
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Skills and Services Section */
+.skills-services {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.skills-left, .skills-right {
+    width: 48%;
+}
+
+.skills-left img {
+    width: 150px;
+    height: 130px;
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+}
+
+.skill {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Create Section */
+.creanate {
+    justify-content: space-between;
+    padding:  0 50px 50px 50px;
+    background-color: #585858;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-box {
+    display: flex;
+}
+.creanate h1 { 
+    background-color: #585858;
+    width: 100%;
+    display: flex;
+    margin: 10px;
+}
+
+.profile {
+    width: 48%;
+    text-align: center;
+    background-color: #a8a8a8;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    position: relative;
+    width: 300px;
+}
+
+
+.services {
+    display: flex;
+    flex-direction: column;
+    background: #313131;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.services label {
+    color: #f7f7f7;
+    margin: 8px;
+}
+
+.services label::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 20px;
+    background: #f0f0f0;
+}
+
+form input {
+    margin: 10px;
+    height: 35px;
+    border-radius: 20px;
+    border-color: darkkhaki;
+}
+
+form input:hover{
+    background-color: #969696;
+    transform: scale(1.05);
+    border-color: mediumseagreen;
+}
+
+
+form button {
+    width: 100px;
+    height: 30px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #111111;
+    transform: scale(1.05);
+}
+
+form button:active {
+    background-color: #000000;
+    transform: scale(0.98);
+}
+
+.massage {
+    margin: 50px 0;
+    text-align: left;
+    padding: 10px;
+}
+
+.profile h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
